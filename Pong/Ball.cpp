@@ -23,8 +23,8 @@ int pongModel::Ball::getYVelocity() {
 
 void pongModel::Ball::move() {
 	// TODO - implement Ball::move
-	x = x*xVelocity;
-	y = y*yVelocity;
+	x += xVelocity;
+	y += yVelocity;
 }
 
 pongModel::Coordinates pongModel::Ball::getCoords() {
