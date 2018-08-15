@@ -14,7 +14,7 @@ namespace pongModel {
 	public:
 		PongTable(Paddle paddle_one, Paddle paddle_two, Ball ball, int width, int height);
 
-		pongModel::Coordinates getPaddleOnePosition();
+		pongModel::void updateBall();
 
 		pongModel::Coordinates getPaddleTwoPosition();
 

@@ -8,20 +8,10 @@ pongModel::PongTable::PongTable(Paddle paddle_one, Paddle paddle_two, Ball ball,
 	this->width = width;
 	this->height = height;
 }
-
-pongModel::Coordinates pongModel::PongTable::getPaddleOnePosition() {
+void pongModel::PongTable::updateBall() {
 	// TODO - implement PongTable::getPaddleOnePosition
-	return paddleOne->getCoords();
+	throw "not implemented";
 }
 
-pongModel::Coordinates pongModel::PongTable::getPaddleTwoPosition() {
-	// TODO - implement PongTable::getPaddleTwoPosition
-	return paddleTwo->getCoords();
-}
-
-pongModel::Coordinates pongModel::PongTable::getBallCoords() {
-	// TODO - implement PongTable::getBallCoords
-	return ball->getCoords();
-}
 
 
