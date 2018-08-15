@@ -1,42 +1,45 @@
 #include "Paddle.h"
 
-pongModel::Paddle::Paddle(int int_top, int int_left, int int_w, int int_h) {
+pongModel::Paddle::Paddle(int x, int y, int int_w, int int_h) {
 	// TODO - implement Paddle::Paddle
-	throw "Not yet implemented";
+	this->x = x;
+	this->y = y;
+	width = int_w;
+	height = int_h;
 }
 
 int pongModel::Paddle::getLeftX() {
 	// TODO - implement Paddle::getLeftX
-	throw "Not yet implemented";
+	return (x-(.5*width));
 }
 
-void pongModel::Paddle::getRightX() {
+int pongModel::Paddle::getRightX() {
 	// TODO - implement Paddle::getRightX
-	throw "Not yet implemented";
+	return (x+(.5*width));
 }
 
 int pongModel::Paddle::getTopY() {
 	// TODO - implement Paddle::getTopY
-	throw "Not yet implemented";
+	return (y+(.5*height));
 }
 
 int pongModel::Paddle::getBottomY() {
 	// TODO - implement Paddle::getBottomY
-	throw "Not yet implemented";
+	return (y-(.5*height));
 }
 
 void pongModel::Paddle::moveDown(int d) {
 	// TODO - implement Paddle::moveDown
-	throw "Not yet implemented";
+	y = y - d;
 }
 
 void pongModel::Paddle::moveUp(int d) {
 	// TODO - implement Paddle::moveUp
-	throw "Not yet implemented";
+	y = y + d;
 }
 
 
 pongModel::Coordinates pongModel::Paddle::getCoords() {
 	// TODO - implement Paddle::getCoords
-	throw "Not yet implemented";
+	return new Coordinates(x,y);
 }

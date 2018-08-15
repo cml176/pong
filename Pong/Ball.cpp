@@ -2,7 +2,10 @@
 
 pongModel::Ball::Ball(int int_x, int int_y, int int_xVelocity, int int_yVelocity) {
 	// TODO - implement Ball::Ball
-	throw "Not yet implemented";
+	x = int_x;
+	y = int_y;
+	xVelocity = int_xVelocity;
+	yVelocity = int_yVelocity;
 }
 
 int pongModel::Ball::getX() {
@@ -28,5 +31,5 @@ void pongModel::Ball::move() {
 }
 
 pongModel::Coordinates pongModel::Ball::getCoords() {
-	// TODO - implement Ball::getCoords
+	return new Coordinates(x, y);
 }

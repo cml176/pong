@@ -15,7 +15,7 @@ namespace pongModel {
 
 		int getLeftX();
 
-		void getRightX();
+		int getRightX();
 
 		int getTopY();
 
