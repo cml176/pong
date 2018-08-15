@@ -1,34 +1,67 @@
 #include "Ball.h"
 
-pongModel::Ball::Ball(int int_x, int int_y, int int_xVelocity, int int_yVelocity) {
+pongModel::Ball::Ball(float x, float y, float xVelocity, float yVelocity, int speed) {
 	// TODO - implement Ball::Ball
-	x = int_x;
-	y = int_y;
-	xVelocity = int_xVelocity;
-	yVelocity = int_yVelocity;
+	this->x = x;
+	this->y = y;
+	this->xVelocity = xVelocity;
+	this->yVelocity = yVelocity;
+	this->speed = speed;
 }
 
-int pongModel::Ball::getX() {
+float pongModel::Ball::getX() {
 	return this->x;
 }
 
-int pongModel::Ball::getY() {
+float pongModel::Ball::getY() {
 	return this->y;
 }
 
-int pongModel::Ball::getXVelocity() {
+float pongModel::Ball::getXVelocity() {
 	return this->xVelocity;
 }
 
-int pongModel::Ball::getYVelocity() {
+float pongModel::Ball::getYVelocity() {
 	return this->yVelocity;
+}
+
+void pongModel::Ball::setYVelocity(float v)
+{
+	this->yVelocity = v;
+}
+
+void pongModel::Ball::setXVelocity(float v)
+{
+	this->xVelocity = v;
+}
+
+int pongModel::Ball::getSpeed() {
+	return this->speed;
 }
 
 void pongModel::Ball::move() {
 	// TODO - implement Ball::move
-	x += xVelocity;
-	y += yVelocity;
+	x = xVelocity*speed;
+	y = yVelocity*speed;
 }
+
+void pongModel::Ball::resetBall()
+{
+	this->x = width / 2;
+	this->y = height / 2;
+}
+
+void pongModel::Ball::normalizeVelocity()
+{
+	float length = sqrt((xVelocity * xVelocity) + (yVelocity * yVelocity));
+	if (length != 0.0f) {
+		length = 1.0f / length;
+		xVelocity *= length;
+		yVelocity *= length;
+	}
+
+}
+
 
 pongModel::Coordinates pongModel::Ball::getCoords() {
 	return new Coordinates(x, y);

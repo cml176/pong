@@ -5,27 +5,29 @@ namespace pongModel {
 	class Paddle {
 
 	private:
-		int x;
-		int y;
-		int width;
-		int height;
+		float x;
+		float y;
+		float width;
+		float height;
 
 	public:
-		Paddle(int int_top, int int_left, int int_w, int int_h);
+		Paddle(float int_top, float int_left, float int_w, float int_h);
 
-		int getLeftX();
+		float getLeftX();
 
-		int getRightX();
+		float getRightX();
 
-		int getTopY();
+		float getTopY();
 
-		int getBottomY();
+		float getBottomY();
 
 		void moveDown(int d);
 
 		void moveUp(int d);
 
 		pongModel::Coordinates getCoords();
+
+		pongModel::Coordinates getAreaCoords();
 	};
 }
 

@@ -1,6 +1,6 @@
 #include "Paddle.h"
 
-pongModel::Paddle::Paddle(int x, int y, int int_w, int int_h) {
+pongModel::Paddle::Paddle(float x, float y, float int_w, float int_h) {
 	// TODO - implement Paddle::Paddle
 	this->x = x;
 	this->y = y;
@@ -8,22 +8,22 @@ pongModel::Paddle::Paddle(int x, int y, int int_w, int int_h) {
 	height = int_h;
 }
 
-int pongModel::Paddle::getLeftX() {
+float pongModel::Paddle::getLeftX() {
 	// TODO - implement Paddle::getLeftX
 	return (x-(.5*width));
 }
 
-int pongModel::Paddle::getRightX() {
+float pongModel::Paddle::getRightX() {
 	// TODO - implement Paddle::getRightX
 	return (x+(.5*width));
 }
 
-int pongModel::Paddle::getTopY() {
+float pongModel::Paddle::getTopY() {
 	// TODO - implement Paddle::getTopY
 	return (y+(.5*height));
 }
 
-int pongModel::Paddle::getBottomY() {
+float pongModel::Paddle::getBottomY() {
 	// TODO - implement Paddle::getBottomY
 	return (y-(.5*height));
 }
@@ -38,8 +38,20 @@ void pongModel::Paddle::moveUp(int d) {
 	y = y + d;
 }
 
+float pongModel::Paddle::getHeight() {
+	return this->height;
+}
+
+float pongModel::Paddle::getWidth() {
+	return this->width;
+}
 
 pongModel::Coordinates pongModel::Paddle::getCoords() {
 	// TODO - implement Paddle::getCoords
-	return new Coordinates(x,y);
+	return new pongModel::Coordinates(x,y);
+}
+
+pongModel::Coordinates pongModel::Paddle::getAreaCoords()
+{
+	return new pongModel::Coordinates(x+width, y+height);
 }

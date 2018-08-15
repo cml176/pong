@@ -1,17 +1,100 @@
 #include "PongTable.h"
+#include "Ball.cpp"
+#include "Paddle.cpp"
+#include <cmath>
+#pragma
+
+void pongModel::PongTable::hitLeftWall()
+{
+	if (ball->getX() < 0) {
+		rightScore++;
+		ball->resetBall();
+		ball->setXVelocity(fabs(ball->getXVelocity()));
+		ball->setYVelocity(0);
+	}
+}
+
+void pongModel::PongTable::hitRightWall()
+{
+	if (ball->getX() > width) {
+		leftScore++;
+		ball->resetBall();
+		ball->setXVelocity(-fabs(ball->getXVelocity()));
+		ball->setYVelocity(0);
+	}
+}
+
+void pongModel::PongTable::hitBottom()
+{
+	if (ball->getY() > height) 
+		ball->setYVelocity(fabs(ball->getYVelocity()));
+	
+}
+
+void pongModel::PongTable::hitTop()
+{
+	if(ball->getY() < 0 )
+		ball->setYVelocity(-fabs(ball->getYVelocity()));
+}
+
+void pongModel::PongTable::hitLeftPaddle()
+{
+	if (ball->getCoords() > paddleLeft->getCoords() &&
+		ball->getCoords < paddleLeft->getAreaCoords()) {
+
+			float bounceDir = ((ball->getY() - paddleLeft->getY()) / paddleLeft->getHeight()) - 0.5f;
+			ball->setXVelocity(fabs(ball->getXVelocity()));
+			ball->setYVelocity(bounceDir);
+	}
+}
+
+void pongModel::PongTable::hitRightPaddle()
+{
+	if (ball->getCoords() > paddleRight->getCoords() &&
+		ball->getCoords < paddleRight->getAreaCoords()) {
+		
+			float bounceDir = ((ball->getY() - paddleRight->getY()) / paddleRight->getHeight()) - 0.5f;
+			ball->setXVelocity(-fabs(ball->getXVelocity()));
+			ball->setYVelocity(bounceDir);
+	}
+}
+
+
+
 
 pongModel::PongTable::PongTable(Paddle paddle_one, Paddle paddle_two, Ball ball, int width, int height) {
 	// TODO - implement PongTable::PongTable
 	this->ball = ball;
-	this->paddleOne = paddle_one;
-	this->paddleTwo = paddle_two;
+	this->paddleLeft = paddle_one;
+	this->paddleRight = paddle_two;
 	this->width = width;
 	this->height = height;
 }
+
 void pongModel::PongTable::updateBall() {
-	// TODO - implement PongTable::getPaddleOnePosition
-	throw "not implemented";
+	this->ball->move();
+	hitLeftPaddle();
+	hitRightPaddle();
+	hitLeftWall();
+	hitRightWall();
+	hitTop();
+	hitBottom();
+	ball->normalizeVelocity();
 }
+
+int pongModel::PongTable::getLeftScore()
+{
+	return this->leftScore;
+}
+
+int pongModel::PongTable::getRightScore()
+{
+	return this->rightScore;
+}
+
+
+
+
 
 
 

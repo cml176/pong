@@ -5,23 +5,34 @@ namespace pongModel {
 	class Ball {
 
 	private:
-		int x;
-		int y;
+		float x;
+		float y;
 		float xVelocity;
 		float yVelocity;
+		int speed;
 
 	public:
-		Ball(int int_x, int int_y, int int_xVelocity, int int_yVelocity);
+		Ball(float x, float y, float xVelocity, float yVelocity, int speed);
 
-		int getX();
+		float getX();
 
-		int getY();
+		float getY();
 
-		int getXVelocity();
+		float getXVelocity();
 
-		int getYVelocity();
+		float getYVelocity();
+
+		void setYVelocity(float);
+
+		void setXVelocity(float);
+
+		int getSpeed();
 
 		void move();
+
+		void resetBall();
+
+		void normalizeVelocity();
 
 		pongModel::Coordinates getCoords();
 	};

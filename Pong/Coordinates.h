@@ -9,9 +9,15 @@ namespace pongModel {
 		int y;
 
 	public:
-		Coordinates(int int_x, int int_y);
-		
-		pongModel::Coordinates getCoordinates();
+		Coordinates(float x, float y);
+
+		pongModel::Coordinates Coordinates::operator<(Complex &);
+
+		pongModel::Coordinates Coordinates::operator>(Complex &);
+
+		float getX();
+
+		float getY();
 	};
 }
 

@@ -1,12 +1,33 @@
 #include "Coordinates.h"
 
-pongModel::Coordinates::Coordinates(int int_x, int int_y) {
+pongModel::Coordinates::Coordinates(float x, float y) {
 	// TODO - implement Coordinates::Coordinates
-	this->x = int_x;
-	this->y = int_y;
+	this->x = x;
+	this->y = y;
 }
 
-pongModel::Coordinates pongModel::Coordinates::getCoordinates() {
-	// TODO - implement Coordinates::getCoordinates
-	return this;
+pongModel::Coordinates Coordinates::operator>(Complex &other)
+{
+	if (x > other.getX() && y > other.getY())
+		return true;
+	else
+		return false;
+}
+
+float pongModel::Coordinates::getX()
+{
+	return pongModel::this->x;
+}
+
+float pongModel::Coordinates::getY()
+{
+	return pongModel::this->y;
+}
+
+pongModel::Coordinates Coordinates::operator<(Complex &other)
+{
+	if (x < other.getX() && y < other.getY())
+		return true;
+	else
+		return false;
 }
