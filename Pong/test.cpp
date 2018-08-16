@@ -9,10 +9,10 @@ int main() {
 	Paddle leftPaddle = Paddle::Paddle(10, height/2, 25, 50);
 	Paddle rightPaddle = Paddle::Paddle(width-10, height/2, 25, 50);
 	PongTable table = PongTable(leftPaddle, rightPaddle, ball, width, height);
-	std::printf("Coords of Ball: (%f,%f)", ball.getX(), ball.getY());
+	std::printf("Coords of Ball: (%f,%f)\n", ball.getX(), ball.getY());
 	std::printf("using table.updateBall()\n");
 	ball.move();
-	std::printf("Coords of Ball: (%f,%f)", ball.getX(), ball.getY());
+	std::printf("Coords of Ball: (%f,%f)\n", ball.getX(), ball.getY());
 	std::printf("Left Player initial score: %d\n", table.getLeftScore());
 	std::printf("Right Player initial score: %d\n", table.getRightScore());
 	std::printf("finished using methods\n");
