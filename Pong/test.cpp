@@ -1,10 +1,5 @@
 #include"PongTable.h"
-
-
-
 using namespace pongModel;
-
-
 int main() {
 	//set up pong model
 	const int width = 300;
