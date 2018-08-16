@@ -50,8 +50,8 @@ int pongModel::Ball::getSpeed() {
 
 void pongModel::Ball::move() {
 	// TODO - implement Ball::move
-	x = xVelocity*speed;
-	y = yVelocity*speed;
+	this->x += xVelocity*speed;
+	this->y += yVelocity*speed;
 }
 
 void pongModel::Ball::normalizeVelocity()
