@@ -1,6 +1,7 @@
 #ifndef COORDINATES_H
 #define COORDINATES_H
 
+
 namespace pongModel {
 	class Coordinates {
 
@@ -11,9 +12,9 @@ namespace pongModel {
 	public:
 		Coordinates(float x, float y);
 
-		pongModel::Coordinates Coordinates::operator<(Complex &);
+		bool Coordinates::operator <(Coordinates &) const;
 
-		pongModel::Coordinates Coordinates::operator>(Complex &);
+		bool Coordinates::operator >(Coordinates &) const;
 
 		float getX();
 

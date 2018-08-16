@@ -1,8 +1,6 @@
+#pragma once
 #include "PongTable.h"
-#include "Ball.cpp"
-#include "Paddle.cpp"
 #include <cmath>
-#pragma
 
 void pongModel::PongTable::hitLeftWall()
 {
@@ -40,7 +38,7 @@ void pongModel::PongTable::hitTop()
 void pongModel::PongTable::hitLeftPaddle()
 {
 	if (ball->getCoords() > paddleLeft->getCoords() &&
-		ball->getCoords < paddleLeft->getAreaCoords()) {
+		ball->getCoords() < paddleLeft->getAreaCoords()) {
 
 			float bounceDir = ((ball->getY() - paddleLeft->getY()) / paddleLeft->getHeight()) - 0.5f;
 			ball->setXVelocity(fabs(ball->getXVelocity()));
@@ -51,7 +49,7 @@ void pongModel::PongTable::hitLeftPaddle()
 void pongModel::PongTable::hitRightPaddle()
 {
 	if (ball->getCoords() > paddleRight->getCoords() &&
-		ball->getCoords < paddleRight->getAreaCoords()) {
+		ball->getCoords() < paddleRight->getAreaCoords()) {
 		
 			float bounceDir = ((ball->getY() - paddleRight->getY()) / paddleRight->getHeight()) - 0.5f;
 			ball->setXVelocity(-fabs(ball->getXVelocity()));
@@ -64,9 +62,9 @@ void pongModel::PongTable::hitRightPaddle()
 
 pongModel::PongTable::PongTable(Paddle paddle_one, Paddle paddle_two, Ball ball, int width, int height) {
 	// TODO - implement PongTable::PongTable
-	this->ball = ball;
-	this->paddleLeft = paddle_one;
-	this->paddleRight = paddle_two;
+	this->ball = &ball;
+	this->paddleLeft = &paddle_one;
+	this->paddleRight =&paddle_two;
 	this->width = width;
 	this->height = height;
 }

@@ -1,5 +1,6 @@
 #ifndef BALL_H
 #define BALL_H
+#include "Coordinates.h"
 
 namespace pongModel {
 	class Ball {

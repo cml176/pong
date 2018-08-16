@@ -6,7 +6,7 @@ pongModel::Coordinates::Coordinates(float x, float y) {
 	this->y = y;
 }
 
-pongModel::Coordinates Coordinates::operator>(Complex &other)
+bool pongModel::Coordinates::operator >(Coordinates &other) const
 {
 	if (x > other.getX() && y > other.getY())
 		return true;
@@ -16,15 +16,15 @@ pongModel::Coordinates Coordinates::operator>(Complex &other)
 
 float pongModel::Coordinates::getX()
 {
-	return pongModel::this->x;
+	return this->x;
 }
 
 float pongModel::Coordinates::getY()
 {
-	return pongModel::this->y;
+	return this->y;
 }
 
-pongModel::Coordinates Coordinates::operator<(Complex &other)
+bool pongModel::Coordinates::operator <(Coordinates &other) const
 {
 	if (x < other.getX() && y < other.getY())
 		return true;

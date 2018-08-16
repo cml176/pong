@@ -1,6 +1,11 @@
 #ifndef PONGTABLE_H
 #define PONGTABLE_H
 
+#include "Ball.h"
+#include "Paddle.h"
+
+class pongModel::Paddle;
+class pongModel::Ball;
 namespace pongModel {
 	class PongTable {
 

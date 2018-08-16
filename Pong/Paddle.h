@@ -11,7 +11,7 @@ namespace pongModel {
 		float height;
 
 	public:
-		Paddle(float int_top, float int_left, float int_w, float int_h);
+		Paddle(float x, float y, float w, float h);
 
 		float getLeftX();
 
@@ -20,6 +20,10 @@ namespace pongModel {
 		float getTopY();
 
 		float getBottomY();
+		
+		float getY();
+		
+		float getHeight();
 
 		void moveDown(int d);
 
