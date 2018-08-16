@@ -8,11 +8,6 @@ pongModel::Paddle::Paddle(float x, float y, float int_w, float int_h) {
 	height = int_h;
 }
 
-float pongModel::Paddle::getHeight(){
-	return this->height;
-}
-
-
 float pongModel::Paddle::getLeftX() {
 	// TODO - implement Paddle::getLeftX
 	return (x-(.5*width));
@@ -42,13 +37,11 @@ void pongModel::Paddle::moveUp(int d) {
 	// TODO - implement Paddle::moveUp
 	y = y + d;
 }
-
+float pongModel::Paddle::getWidth(){
+	return this->width;
+}
 float pongModel::Paddle::getHeight() {
 	return this->height;
-}
-
-float pongModel::Paddle::getWidth() {
-	return this->width;
 }
 
 float pongModel::Paddle::getY(){
@@ -57,10 +50,10 @@ float pongModel::Paddle::getY(){
 
 pongModel::Coordinates pongModel::Paddle::getCoords() {
 	// TODO - implement Paddle::getCoords
-	return new pongModel::Coordinates(x,y);
+	return Coordinates(x,y);
 }
 
 pongModel::Coordinates pongModel::Paddle::getAreaCoords()
 {
-	return new pongModel::Coordinates(x+width, y+height);
+	return Coordinates(x+width, y+height);
 }

@@ -1,5 +1,6 @@
 #ifndef PADDLE_H
 #define PADDLE_H
+#include "Coordinates.h"
 
 namespace pongModel {
 	class Paddle {
@@ -24,6 +25,8 @@ namespace pongModel {
 		float getY();
 		
 		float getHeight();
+		
+		float getWidth();
 
 		void moveDown(int d);
 

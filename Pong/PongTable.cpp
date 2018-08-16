@@ -6,7 +6,7 @@ void pongModel::PongTable::hitLeftWall()
 {
 	if (ball->getX() < 0) {
 		rightScore++;
-		ball->resetBall();
+		resetBall();
 		ball->setXVelocity(fabs(ball->getXVelocity()));
 		ball->setYVelocity(0);
 	}
@@ -16,7 +16,7 @@ void pongModel::PongTable::hitRightWall()
 {
 	if (ball->getX() > width) {
 		leftScore++;
-		ball->resetBall();
+		resetBall();
 		ball->setXVelocity(-fabs(ball->getXVelocity()));
 		ball->setYVelocity(0);
 	}
@@ -80,6 +80,11 @@ void pongModel::PongTable::updateBall() {
 	ball->normalizeVelocity();
 }
 
+void pongModel::PongTable::resetBall()
+{
+	this->ball->setX(width / 2);
+	this->ball->setY(height / 2);
+}
 int pongModel::PongTable::getLeftScore()
 {
 	return this->leftScore;

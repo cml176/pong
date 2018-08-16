@@ -28,6 +28,8 @@ namespace pongModel {
 		void hitLeftPaddle();
 
 		void hitRightPaddle();
+		
+		void resetBall();
 
 
 

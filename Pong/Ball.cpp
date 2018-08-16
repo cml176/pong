@@ -1,4 +1,5 @@
 #include "Ball.h"
+#include <cmath>
 
 pongModel::Ball::Ball(float x, float y, float xVelocity, float yVelocity, int speed) {
 	// TODO - implement Ball::Ball
@@ -15,6 +16,14 @@ float pongModel::Ball::getX() {
 
 float pongModel::Ball::getY() {
 	return this->y;
+}
+
+void pongModel::Ball::setX(float x){
+	this->x = x;
+}
+
+void pongModel::Ball::setY(float y){
+	this->y = y;
 }
 
 float pongModel::Ball::getXVelocity() {
@@ -45,12 +54,6 @@ void pongModel::Ball::move() {
 	y = yVelocity*speed;
 }
 
-void pongModel::Ball::resetBall()
-{
-	this->x = width / 2;
-	this->y = height / 2;
-}
-
 void pongModel::Ball::normalizeVelocity()
 {
 	float length = sqrt((xVelocity * xVelocity) + (yVelocity * yVelocity));
@@ -64,5 +67,5 @@ void pongModel::Ball::normalizeVelocity()
 
 
 pongModel::Coordinates pongModel::Ball::getCoords() {
-	return new Coordinates(x, y);
+	return Coordinates(x, y);
 }

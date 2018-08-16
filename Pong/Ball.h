@@ -18,6 +18,10 @@ namespace pongModel {
 		float getX();
 
 		float getY();
+		
+		void setX(float);
+		
+		void setY(float);
 
 		float getXVelocity();
 
