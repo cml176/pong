@@ -60,13 +60,13 @@ void pongModel::PongTable::hitRightPaddle()
 
 
 
-pongModel::PongTable::PongTable(Paddle paddle_one, Paddle paddle_two, Ball ball, int width, int height) {
+pongModel::PongTable::PongTable(Paddle *paddle_one, Paddle *paddle_two, Ball *ball, int width, int height) {
 	// TODO - implement PongTable::PongTable
 	leftScore = 0;
 	rightScore = 0;
-	this->ball = &ball;
-	this->paddleLeft = &paddle_one;
-	this->paddleRight =&paddle_two;
+	this->ball = ball;
+	this->paddleLeft = paddle_one;
+	this->paddleRight = paddle_two;
 	this->width = width;
 	this->height = height;
 }

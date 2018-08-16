@@ -34,7 +34,7 @@ namespace pongModel {
 
 
 	public:
-		PongTable(pongModel::Paddle paddle_one, pongModel::Paddle paddle_two, pongModel::Ball ball, int width, int height);
+		PongTable(pongModel::Paddle *paddle_one, pongModel::Paddle *paddle_two, pongModel::Ball *ball, int width, int height);
 		void updateBall();
 		int getLeftScore();
 		int getRightScore();
