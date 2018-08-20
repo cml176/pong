@@ -12,9 +12,9 @@ namespace pongModel {
 	public:
 		Coordinates(float x, float y);
 
-		bool Coordinates::operator <(Coordinates &) const;
+		bool operator <(Coordinates &) const;
 
-		bool Coordinates::operator >(Coordinates &) const;
+		bool operator >(Coordinates &) const;
 
 		float getX();
 
