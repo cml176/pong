@@ -1,4 +1,4 @@
-#include "Ball.h"
+#include "../model_headers/Ball.h"
 #include <cmath>
 
 pongModel::Ball::Ball(float x, float y, float xVelocity, float yVelocity, int speed) {

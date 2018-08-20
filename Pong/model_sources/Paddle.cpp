@@ -1,4 +1,4 @@
-#include "Paddle.h"
+#include "../model_headers/Paddle.h"
 
 pongModel::Paddle::Paddle(float x, float y, float int_w, float int_h) {
 	// TODO - implement Paddle::Paddle

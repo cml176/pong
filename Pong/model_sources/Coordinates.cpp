@@ -1,4 +1,4 @@
-#include "Coordinates.h"
+#include "../model_headers/Coordinates.h"
 
 pongModel::Coordinates::Coordinates(float x, float y) {
 	// TODO - implement Coordinates::Coordinates

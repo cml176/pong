@@ -1,5 +1,5 @@
 #pragma once
-#include "PongTable.h"
+#include "../model_headers/PongTable.h"
 #include <cmath>
 
 void pongModel::PongTable::hitLeftWall()

@@ -1,4 +1,4 @@
-#include"PongTable.h"
+#include"../model_headers/PongTable.h"
 #include<cstdio>
 using namespace pongModel;
 int main() {
