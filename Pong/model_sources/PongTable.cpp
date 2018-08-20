@@ -1,5 +1,5 @@
 #pragma once
-#include "../model_headers/PongTable.h"
+#include "PongTable.h"
 #include <cmath>
 
 void pongModel::PongTable::hitLeftWall()
@@ -50,8 +50,10 @@ void pongModel::PongTable::hitLeftPaddle()
 
 void pongModel::PongTable::hitRightPaddle()
 {
-	if (ball->getCoords() > paddleRight->getCoords() &&
-		ball->getCoords() < paddleRight->getAreaCoords()) {
+	if (ball->getX() >= paddleRight->getX() &&
+		ball->getY() <= paddleRight->getTopY() &&
+		ball->getY() >= paddleRight->getBottomY()) 	
+	{
 		
 			float bounceDir = ((ball->getY() - paddleRight->getY()) / paddleRight->getHeight()) - 0.5f;
 			ball->setXVelocity(-fabs(ball->getXVelocity()));
