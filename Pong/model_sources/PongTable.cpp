@@ -1,5 +1,5 @@
 #pragma once
-#include "PongTable.h"
+#include "../model_headers/PongTable.h"
 #include <cmath>
 
 void pongModel::PongTable::hitLeftWall()
@@ -7,7 +7,7 @@ void pongModel::PongTable::hitLeftWall()
 	if (ball->getX() < 0) {
 		rightScore++;
 		resetBall();
-		ball->setXVelocity(fabs(ball->getXVelocity()));
+		ball->setXVelocity(-fabs(ball->getXVelocity()));
 		ball->setYVelocity(0);
 	}
 }
@@ -17,7 +17,7 @@ void pongModel::PongTable::hitRightWall()
 	if (ball->getX() > width) {
 		leftScore++;
 		resetBall();
-		ball->setXVelocity(-fabs(ball->getXVelocity()));
+		ball->setXVelocity(fabs(ball->getXVelocity()));
 		ball->setYVelocity(0);
 	}
 }
