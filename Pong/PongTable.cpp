@@ -37,8 +37,10 @@ void pongModel::PongTable::hitTop()
 
 void pongModel::PongTable::hitLeftPaddle()
 {
-	if (ball->getCoords() > paddleLeft->getCoords() &&
-		ball->getCoords() < paddleLeft->getAreaCoords()) {
+	if (ball->getX() <= paddleLeft->getX() &&
+		ball->getY() <= paddleLeft->getTopY()&&
+		ball->getY() >= paddleLeft->getBottomY()) 
+	{
 
 			float bounceDir = ((ball->getY() - paddleLeft->getY()) / paddleLeft->getHeight()) - 0.5f;
 			ball->setXVelocity(fabs(ball->getXVelocity()));

@@ -14,9 +14,7 @@ namespace pongModel {
 	public:
 		Paddle(float x, float y, float w, float h);
 
-		float getLeftX();
-
-		float getRightX();
+		float getX();
 
 		float getTopY();
 
