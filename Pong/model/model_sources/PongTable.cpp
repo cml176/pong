@@ -101,6 +101,14 @@ int pongModel::PongTable::getRightScore()
 	return this->rightScore;
 }
 
+int pongModel::PongTable::getWidth(){
+	return this->width;
+}
+
+int pongModel::PongTable::getHeight(){
+	return this->height;
+}
+
 
 
 

@@ -1,4 +1,5 @@
 #include"../model_headers/PongTable.h"
+#include "../../view/PongView.h"
 #include<cstdio>
 using namespace pongModel;
 int main() {
@@ -10,23 +11,23 @@ int main() {
 	Paddle *rightPaddle = new Paddle(width-10, height/2, 25, 50);
 	PongTable table = PongTable(leftPaddle, rightPaddle, ball, width, height);
 	//Show Coords of Ball object
-	while (true){
+	// while (true){
 		
-		std::printf("Coords of Ball: (%f,%f)\n", ball->getX(), ball->getY());
-		std::printf("using table.updateBall()\n");
+		// std::printf("Coords of Ball: (%f,%f)\n", ball->getX(), ball->getY());
+		// std::printf("using table.updateBall()\n");
 		//Update Ball using PongTable
-		table.updateBall();
+		// table.updateBall();
 		//Show new Coords of Ball object
-		std::printf("Coords of Ball: (%f,%f)\n", ball->getX(), ball->getY());
-		std::printf("Left Player initial score: %d\n", table.getLeftScore());
-		std::printf("Right Player initial score: %d\n", table.getRightScore());
-		std::printf("finished using methods\n");
+		// std::printf("Coords of Ball: (%f,%f)\n", ball->getX(), ball->getY());
+		// std::printf("Left Player initial score: %d\n", table.getLeftScore());
+		// std::printf("Right Player initial score: %d\n", table.getRightScore());
+		// std::printf("finished using methods\n");
 	//set up pong view
 		//TODO:
 	//set up pong controller 
 		//TODO:
 		
-		std::getchar();
-	}
+		// std::getchar();
+	// }
 	return 0;
 }

@@ -38,6 +38,8 @@ namespace pongModel {
 		void updateBall();
 		int getLeftScore();
 		int getRightScore();
+		int getWidth();
+		int getHeight();
 		
 
 	};
