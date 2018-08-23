@@ -1,23 +1,26 @@
 #include <windows.h>
-#include <iostream>   
-#include <gl\gl.h>
-#include <gl\glu.h>               
+#include <iostream>                 
 #include "../model/model_headers/PongTable.h"
 #include "../freeglut/include/GL/freeglut.h"
-#pragma comment(lib, "OpenGL64.lib")
+#include "../freeglut/include/GL/glut.h"
+#pragma comment(lib, "OpenGL32.lib")
 #include "PongView.h"
-PongView::PongView(PongTable &model): model(model){
+
+
+PongView::PongView(const pongModel::PongTable &model)
+: model(model)
+{
 	initGLUT();
-	return 0;
 }
 
-void PongView::setModel(PongTable &model)
+void PongView::setModel(const pongModel::PongTable &model)
 {
 	this->model = model;
 }
 
-void PongView::initGLUT(){
-	gluInit(&argc, argv);
+void PongView::initGLUT()
+{
+	gluInit(0,0);
 	gluInitDisplayMode(GLUT_DOUBLE | GLUT_RGB | GLUT_DEPTH);
 	glutInitWindowSize(model.getWidth(), model.getHeight());
 	glutCreateWindow("Pong");
